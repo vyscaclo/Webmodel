@@ -15,7 +15,8 @@
 
 body{
   margin:0;
-  height:100vh;
+  min-height:100vh;
+  min-height:100dvh;
   background:
     radial-gradient(circle at top,#1c2550,transparent 55%),
     linear-gradient(180deg,#05070d,var(--bg));
@@ -41,14 +42,6 @@ body{
     0 40px 80px rgba(0,0,0,0.7),
     inset 0 0 0 1px rgba(255,255,255,0.06);
   text-align:center;
-}
-
-/* 🔧 FIX CENTER PAGE 1 */
-#page1{
-  min-height:320px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
 }
 
 h1{font-size:22px;margin:0 0 6px}
@@ -176,7 +169,6 @@ button.disabled{opacity:.55;pointer-events:none}
 <a id="android3d" href="modelhugworld.glb" target="_blank" style="display:none"></a>
 
 <script>
-/* ---------- Dense / Less Fade Particle Cloud ---------- */
 const cloud=document.getElementById('cloud');
 const COUNT=720;
 const R=60;
@@ -206,7 +198,6 @@ for(let i=0;i<COUNT;i++){
   cloud.appendChild(d);
 }
 
-/* ---------- Loading ---------- */
 const btn=document.getElementById('openBtn');
 const loader=document.getElementById('loader');
 const text=document.getElementById('text');
@@ -239,7 +230,6 @@ btn.onclick=()=>{
       }else{
         setTimeout(()=>ar.click(),650);
       }
-
     }else{
       text.textContent=`Opening 3D model… ${Math.floor(p)}%`;
     }
@@ -247,7 +237,6 @@ btn.onclick=()=>{
   },180);
 };
 
-/* ---------- AFTER CLOSE AR ---------- */
 document.addEventListener('visibilitychange',()=>{
   if(!document.hidden && arOpened){
     page1.style.display='none';
