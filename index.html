@@ -43,6 +43,14 @@ body{
   text-align:center;
 }
 
+/* 🔧 FIX CENTER PAGE 1 */
+#page1{
+  min-height:320px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
 h1{font-size:22px;margin:0 0 6px}
 p{font-size:14px;opacity:.85;margin-bottom:26px}
 
@@ -225,13 +233,10 @@ btn.onclick=()=>{
       text.textContent='Launching…';
       arOpened=true;
 
-      // ---------- PLATFORM CHECK ----------
       const ua=navigator.userAgent.toLowerCase();
       if(ua.includes('android')){
-        // Android เปิด GLB ในแท็บใหม่
         setTimeout(()=>android3d.click(),650);
       }else{
-        // iOS เปิด USDZ
         setTimeout(()=>ar.click(),650);
       }
 
